@@ -1,0 +1,50 @@
+{% extends "layouts/layout.html" %}
+
+{% block titleEcss %}
+<title>Login</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock titleEcss %}
+
+{% block conteudo %}
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+
+<!-- Bloco de mensagens flash -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div>
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+<!-- Fim do bloco de mensagens flash -->
+
+<form method="POST" action="{{ url_for('login') }}">
+    {{ form.hidden_tag() }}  <!-- Token CSRF -->
+
+    <h3>Login</h3>
+
+    <label for="email">Email</label>
+    {{ form.email(class="form-control", id="email", placeholder="Email") }}
+
+    <label for="password">Senha</label>
+    {{ form.senha(class="form-control", id="password", placeholder="Senha") }}
+
+    <!-- Campo do reCAPTCHA -->
+    <div class="recaptcha-container">
+        {{ form.recaptcha() }}
+    </div>
+
+    <button type="submit">{{ form.loginBotao() }}</button>  <!-- Botão de login -->
+
+    <a href="/recuperar" class="button">Esqueceu a senha?</a>
+</form>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock conteudo %}

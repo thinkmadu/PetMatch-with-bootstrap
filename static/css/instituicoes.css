@@ -1,0 +1,111 @@
+/* CSS Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oxanium';
+    color: #fff;
+    background-color: #333;
+    padding-top: 100px; /* Margem para que o conteúdo não seja sobreposto pela navbar */
+    padding-bottom: 60px; /* Espaço para que o conteúdo não seja sobreposto pelo footer */
+}
+
+nav {
+    background-color: #000;
+    font-family: 'Oxanium';
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+}
+
+/* Logo no canto esquerdo */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: #f2f2f2;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Define a altura da imagem para se ajustar à altura da navbar */
+    width: auto; /* Mantém a proporção da imagem */
+    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+    filter: invert(50%); /* Inverte as cores da imagem */
+    object-fit: contain; /* Garante que a imagem se ajuste sem distorção */
+}
+
+.logo:hover {
+    color: #ccc;
+}
+
+/* Estilo da lista da Navbar */
+.topnav {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    flex: 2; /* Garante que a lista ocupe o restante do espaço */
+}
+
+.topnav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+    display: inline-block;
+}
+
+.topnav a:hover {
+    color: #ccc;
+}
+
+section{
+    padding-left: 10px;
+}
+
+main {
+    padding-top: 170px; /* Ajuste o valor conforme necessário, dependendo da altura da navbar */
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    width: 200px; /* Largura fixa */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+#logoONG {
+    border-radius: 50%; /* Arredonda a imagem */
+    width: 250px; /* Largura fixa */
+    height: 250px; /* Altura fixa para manter a proporção circular */
+    object-fit: cover; /* Garante que a imagem se ajuste ao contêiner sem distorção */
+    display: block;
+}
+
+footer {
+    font-family: 'Oxanium';
+    background-color: #000;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #f2f2f2;
+}
+/* Fim CSS global */
+

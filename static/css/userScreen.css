@@ -1,0 +1,298 @@
+/* CSS Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oxanium', serif;
+    color: #fff;
+    background-color: #333;
+    padding-top: 100px; /* Margem para que o conteúdo não seja sobreposto pela navbar */
+    padding-bottom: 60px; /* Espaço para que o conteúdo não seja sobreposto pelo footer */
+}
+
+main {
+    flex: 1; /* Faz o conteúdo ocupar o espaço restante da tela */
+}
+/* Navbar */
+nav {
+    background-color: #000;
+    font-family: 'Oxanium', serif;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+}
+
+/* Logo no canto esquerdo */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.topnav {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    flex: 2; /* Garante que a lista ocupe o restante do espaço */
+}
+
+.topnav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 27 px;
+    display: inline-block;
+}
+
+.topnav a:hover {
+    color: #ccc;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: #f2f2f2;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Define a altura da imagem para se ajustar à altura da navbar */
+    width: auto; /* Mantém a proporção da imagem */
+    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+    filter: invert(50%); /* Inverte as cores da imagem */
+    object-fit: contain; /* Garante que a imagem se ajuste sem distorção */
+}
+
+.logo:hover {
+    color: #ccc;
+}
+
+footer {
+    font-family: 'Oxanium', serif;
+    background-color: #000;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #f2f2f2;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+/* Fim CSS global */
+
+button {
+    margin-top: 150px;
+    width: 100%;
+    background-color: #33ba3354;
+    color: #100707;
+    padding:  0;
+    font-size: 24px;
+    font-weight: 600;
+    border-radius:0;
+    cursor: pointer;
+}
+
+/* Estilos para o perfil */
+.profile-container {
+    max-width: 600px; /* Largura máxima do container */
+    margin: 100px auto; /* Centraliza verticalmente e horizontalmente */
+    padding: 30px; /* Espaçamento interno */
+    background: linear-gradient(145deg, #333, #444); /* Gradiente suave de fundo */
+    border-radius: 15px; /* Bordas mais arredondadas */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais sutil */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.profile-container:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Sombra mais forte */
+}
+
+.profile-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #f2f2f2;
+}
+
+.profile-image {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile-image img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+    border: 2px solid #f2f2f2;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+button {
+    background: rgba(33, 150, 186, 0.33);
+    color: #fff;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px; /* Reduza o espaçamento acima do botão */
+}
+
+button:hover {
+    background-color: #0d3f53;
+    transform: translateY(-3px);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Responsividade: Ajusta para telas menores */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 20px;
+    }
+
+    .profile-container h2 {
+        font-size: 26px;
+    }
+
+    .profile-image img {
+        max-width: 140px;
+        max-height: 140px;
+    }
+
+    button {
+        font-size: 20px;
+    }
+}
+
+.adoption-history {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    background: linear-gradient(145deg, #333, #444); /* Fundo com gradiente */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.adoption-history h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #f2f2f2;
+}
+
+.adoption-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.adoption-table th,
+.adoption-table td {
+    padding: 10px 15px;
+    text-align: center;
+    border: 1px solid #666;
+    color: #f2f2f2;
+}
+
+.adoption-table th {
+    background: #444;
+    font-weight: bold;
+    color: #2b919f;
+    text-transform: uppercase;
+}
+
+.adoption-table tr:nth-child(even) {
+    background: #555;
+}
+
+.adoption-table tr:hover {
+    background: #33ba3354;
+    transform: scale(1.01);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Estilos para a lista de chats */
+.chat-list {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #444; /* Cor de fundo do container */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chat-list h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #f2f2f2;
+}
+
+.chat-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.chat-list li {
+    background-color: #555;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.chat-list li:hover {
+    background-color: #33ba3354; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05);
+}
+
+.chat-list li a {
+    color: #f2f2f2; /* Cor do texto do link */
+    text-decoration: none;
+    display: block; /* Faz o link ocupar toda a área do item */
+}
+
+.chat-list li a:hover {
+    color: #ddd;
+}
+
+.chat-list strong {
+    color: #349bb3;
+    font-weight: bold;
+}
+
+.chat-list p {
+    text-align: center;
+    color: #ffcc00;
+    font-size: 18px; /
+}

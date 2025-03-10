@@ -1,0 +1,197 @@
+/* CSS Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oxanium', serif;
+    color: #fff;
+    background-color: #333;
+    padding-top: 100px; /* Margem para que o conteúdo não seja sobreposto pela navbar */
+    padding-bottom: 60px; /* Espaço para que o conteúdo não seja sobreposto pelo footer */
+}
+
+/* Navbar */
+nav {
+    background-color: #000;
+    font-family: 'Oxanium', serif;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+}
+
+/* Logo no canto esquerdo */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.topnav {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    flex: 2; /* Garante que a lista ocupe o restante do espaço */
+}
+
+.topnav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 27 px;
+    display: inline-block;
+}
+
+.topnav a:hover {
+    color: #ccc;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: #f2f2f2;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Define a altura da imagem para se ajustar à altura da navbar */
+    width: auto; /* Mantém a proporção da imagem */
+    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+    filter: invert(50%); /* Inverte as cores da imagem */
+    object-fit: contain; /* Garante que a imagem se ajuste sem distorção */
+}
+
+.logo:hover {
+    color: #ccc;
+}
+
+footer {
+    font-family: 'Oxanium', serif;
+    background-color: #000;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #f2f2f2;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+/* Fim CSS global */
+
+/* Conteúdo principal */
+h1, h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Aumentando o espaçamento superior do primeiro h2 */
+h2:first-of-type {
+    margin-top: 60px;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: #D8CAB8;
+    color: white;
+    border-radius: 10px;
+}
+
+table th {
+    color: white;
+    background-color: #0b0f0c;
+    padding: 15px;
+    border: 1px solid #555;
+    text-align: center;
+}
+
+table td {
+    color: black;
+    padding: 15px;
+    border: 1px solid #555;
+    text-align: center;
+}
+
+/* Centralizando conteúdo */
+table {
+    margin: 20px auto;
+}
+
+/* Botões */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    margin-bottom: 50px;
+}
+
+.button-container a {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #218838;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.button-container a:hover {
+    background-color: #33ba33
+}
+
+/* Grupo de botões */
+.button-group {
+    display: flex; /* Usar flexbox para alinhar horizontalmente */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    align-items: center; /* Alinha os botões verticalmente */
+    gap: 10px; /* Espaçamento uniforme entre os botões */
+}
+
+/* Estilo para os botões */
+.delete-btn, .edit-btn {
+    padding: 10px 20px; /* Mesma altura para os botões */
+    border: none;
+    border-radius: 5px;
+    font-size: 14px; /* Tamanho da fonte consistente */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-flex; /* Mantém o botão em linha */
+    align-items: center; /* Alinha o texto no centro verticalmente */
+}
+
+.delete-btn {
+    background-color: #a12e15; /* Cor de fundo do botão Excluir */
+    color: #fff; /* Cor do texto */
+    margin-bottom: 5px;
+}
+
+.delete-btn:hover {
+    background-color: #c43d1b; /* Cor de fundo ao passar o mouse */
+}
+
+.edit-btn {
+    background-color: #4CAF50; /* Cor de fundo do botão Editar */
+    color: #fff; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    margin-top: 5px;
+}
+
+.edit-btn:hover {
+    background-color: #33ba33; /* Cor de fundo ao passar o mouse */
+}

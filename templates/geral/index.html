@@ -1,0 +1,34 @@
+{% extends "/layouts/layout.html" %}
+{% block titleEcss %}
+    <title>PetMatch</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock titleEcss %}
+
+{% block conteudo %}
+    <!-- Seção principal com a imagem -->
+    <section class="hero">
+        <a href="{{ url_for('petsList') }}">
+            <h1>Adote um amigo</h1>
+        </a>
+
+
+
+    </section>
+
+    <!-- Seção Sobre -->
+    <section class="sobre" id="sobre">
+        <h2>Sobre</h2>
+        <p>Esse é um projeto que busca facilitar o processo de adoção
+            de animais para os campinenses, reunindo várias ONGs e canis em uma plataforma.</p>
+        <p id="doar">Além de adotar, você também pode ajudar de outras maneiras:</p>
+        <ul id="doar">
+            <li>Oferecer um lar temporário</li>
+            <li>Ser voluntário nos eventos ou nos próprios abrigos das ONGs parceiras</li>
+            <li>Doar ração, remédios, brinquedos para o endereço das ONGs</li>
+            <li>Doar qualquer valor para as instituições usando os dados bancarários na aba "Ongs"</li>
+        </ul>
+        <img src="../../static/assets/gato%20fofo%20gif.gif " alt="gif de um gatinho"> <!-- Imagem ao lado do texto -->
+
+    </section>
+{% endblock conteudo %}
+

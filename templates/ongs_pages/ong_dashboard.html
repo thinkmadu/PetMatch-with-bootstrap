@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block titleEcss %}
+    <title>Página Inicial - ONG</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ongs_dashboard.css') }}">
+    {% endblock %}
+
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+</head>
+
+<body class="form-v10">
+    <!-- Navegação -->
+    <nav>
+        <div class="navbar-left">
+            <a href="/home" class="logo">
+                <img src="../../static/assets/logo.webp" alt="Logo"> <!-- Imagem ao lado do texto -->
+                PetMatch
+            </a> <!-- Link para a home -->
+        </div>
+
+        <ul class="topnav">
+            <li><a href="/chats">Chats</a></li>
+            <li><a href="/ongsList">Pets</a></li>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/home#sobre">Sobre</a></li>
+            <li><a href="/logout">Sair</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    {% block conteudo %}
+    <main>
+        <h1>ONG Dashboard</h1>
+
+        <h2>Lista de Animais</h2>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Raça</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+
+            {% for animal in animais %}
+            <tr>
+                <td>{{ animal.nome }}</td>
+                <td>{{ animal.idade }}</td>
+                <td>{{ animal.especie }}</td>
+                <td>{{ animal.status }}</td>
+                <td>
+                    <form action="/ong_dashboard/pets_delete/{{ animal.id }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir este animal?');">
+                        <button type="submit" class="delete-btn">Excluir</button>
+                    </form>
+                    <a href="/ong_dashboard/pets_edit/{{ animal.id }}" class="edit-btn">Editar</a> <!-- Link para editar -->
+
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <div class="button-container">
+            <a href="/ong_dashboard/pets_register">Cadastrar Animal</a>
+        </div>
+    </main>
+    {% endblock conteudo %}
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 PetMatch. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

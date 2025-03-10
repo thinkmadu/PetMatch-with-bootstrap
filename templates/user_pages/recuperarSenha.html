@@ -1,0 +1,26 @@
+{% extends "layouts/layout.html" %}
+{% block titleEcss %}
+<title>Recuperação de Senha</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/recuperaçãoSenha.css') }}">
+
+{% endblock titleEcss%}
+
+{% block conteudo %}
+
+<div class="container">
+    <div class="form-box">
+        <h2>Recuperar Senha</h2>
+        <p>Insira seu endereço de e-mail e enviaremos um link para redefinir sua senha.</p>
+        <form action="{{ url_for('recuperar') }}" method="POST">
+            {{ form.hidden_tag() }}
+
+            {{ form.email.label }}
+                    {{ form.email(class="input-text") }}
+                    {% if form.email.errors %}
+                        <div class="error">{{ form.email.errors[0] }}</div>
+                    {% endif %}
+            <button type="submit" class="btn-edit">Enviar email</button>
+        </form>
+    </div>
+</div>
+{% endblock conteudo%}
