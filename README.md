@@ -1,30 +1,44 @@
-# Sistema de adoção de pets - PETMATCH
-Esse projeto foi fruto da disciplina de Gerência de Projetos da Universidade Estadual da Paraíba.
-A premissa do projeto é criar uma ponte entre ONGs para pets e possíveis donos que procuram um(a) companheiro!
+# Sistema de adoção de pets - PETMATCH (ver. 2)
+Esse projeto é uma remodelação do projeto PetMatch (sistema desenvolvido para a disciplina de Gerẽncia de Projetos) e será adaptado para utilizar o bootstrap
 
-## Ferramentas e passos necessárias para rodar o projeto
+## Ferramentas utilizadas no projeto
 - MySql 8.x.x ou superior.
 - Python 3.11 ou superior.
-- Para instalar todos os pacotes necessários executar no terminal  pip install -r requirements.txt
-- Para Usar a base de dados já alimentada do nosso projeto:
-  - No MySQL Workbench,selecionar uma conexao
-  - ![img.png](img.png)
-  - Ir na Server -> Data Import -> selecionar o local do PetmatchExport -> Import Progress -> Start Import
-  - ![img_1.png](img_1.png) ![img_2.png](img_2.png)
-- No arquivo app.py na linha 22 é necessário botar as credenciais do mysql
-  - Segue esse padrão : app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://<nome_do_user_mysql>:<senha_do_user>@localhost/PetMatch'
-- Para executar o sistema em si tem que rodar o arquivo PetMatch.py, no terminal vai aparecer a url http://127.0.0.1:5000
-  - Caso a porta 5000 esteja ocupada só comentar a linha 8 e descomentar a 7, que vai ser executado na porta 5001, na url http://127.0.0.1:5001
+- BootStrap 5.1.3
+
+## Passo a passo para execução
+### Instalando pacotes necessários
+- Execute no terminal o comando `pip install -r requirements.txt`
+
+### Configurando o banco de dados pré-existente
+- O projeto, por padrão, já possui um banco de dados alimentado com pets de exemplo. Para utilizá-lo, siga os passos abaixo:
+1. No MySQL Workbench, selecionar uma conexão.
+![img.png](img.png)
+2. Vá em *Server* -> *Data Import* -> navegue até a pasta *PetmatchExport* -> *Import Progress* -> *Start Import*
+![img_1.png](img_1.png) ![img_2.png](img_2.png)
+3. Agora com o banco de dados importado, é necessário configurar as credenciais de acesso ao banco de dados no arquivo `app.py` na linha 22. Siga o padrão: `app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://<nome_do_user_mysql>:<senha_do_user>@localhost/PetMatch'`
+4. Execute o arquivo PetMatch.py, no terminal irá aparecer a url do servidor local para acessar o sistema.
 
 ## Credenciais
-- No arquivo contas salvas.txt tem todos os admins, ongs e usuários cadastrados 
-- Email e senha de cada um
+Caso vocẽ use o banco de dados já alimentado, já existem credenciais de acesso para os usuários, ongs e administradores.
+| Tipo de usuário| Email                  | Senha|
+|----------------|------------------------|------|
+|Admin           |admin1@gmail.com        | 77   |
+|Admin           |admin2@gmail.com        | 88   |
+|Admin           |admin3@gmail.com        | 77   |
+|Admin           |admin4@gmail.com        | 88   |
+|Ong             |a4ong@gmail.com         | 11   |
+|Ong             |animalderuacg@gmail.com | 11   |
+|Usuário normal  |doxino2895@aqqor.com    | 00   |
+|Usuário normal  |melobos118@chainds.com  | 11   |
+|Usuário normal  |sohew17721@confmin.com  | 22   |
 
-## Rotas do Admin
+## Rotas
+### Do Admin
 - O admin possui a visão de todos os animais, usuários e ongs cadastradas no dashboard dele, logo após logar
 - Ele pode cadastrar Ongs
 
-## Rotas do Usuário
+### Do Usuário
 - Cadastro na barra de navegação da home
 - Login na barra de navegação da home
 - Lista de pets na barra de navegação da home
@@ -36,14 +50,14 @@ A premissa do projeto é criar uma ponte entre ONGs para pets e possíveis donos
 - Ao clicar em "pets para adoção" na barra de navegação, selecionar um animal e clicar em tenho interesse um chat vai ser iniciado com a ong que cadastrou o animal
 - Na aba de /petList tem filtros de exibição de animais
 
-## Rotas do Usuário
+### Do Usuário
 - Visão de todos os animais cadastrados após logar com a opção de editar ou excluir o pet
 - Na rota de edição ele tem a opção de reservar o animal ou adotar, ao clicar em mudar o status para adotado o campo de adotante vai mostrar uma lista de usuários que clicaram em "Tenho interesse" nesse pet
 - O pet que tem o status adotado não aparece mais na lista de pets que os usuários tem acesso, os reservados ainda aparecem
 - Opção de cadastro de animais na tela principal
 - Lista de chats iniciados na barra de navegação, os chats só são iniciado pelos usuários 
 
-## Chat simultâneo
+### Chat simultâneo
 - Para poder usar o chat como se fosse o user e a ong conversando ao mesmo tempo tem que logar em uma conta usuário em perfil do chrome, e em outro perfil do chrome na conta tipo Ong correspondente no chat
   - Ou só loga como user em um navegador e em outro navegador como a ong correspondente 
 
