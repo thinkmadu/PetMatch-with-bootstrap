@@ -1,10 +1,13 @@
 # Sistema de adoção de pets - PETMATCH (ver. 2)
-Esse projeto é uma remodelação do projeto PetMatch (sistema desenvolvido para a disciplina de Gerẽncia de Projetos) e será adaptado para utilizar o bootstrap
+Esse projeto é uma remodelação do projeto PetMatch (sistema desenvolvido para a disciplina de Gerência de Projetos) e será adaptado para atender aos critérios da disciplina de Programação Web.
 
 ## Ferramentas utilizadas no projeto
 - MySql 8.x.x ou superior.
 - Python 3.11 ou superior.
-- BootStrap 5.1.3
+- BootStrap
+
+## Documentação
+- [Documento de visão](
 
 ## Passo a passo para execução
 ### Instalando pacotes necessários
@@ -32,32 +35,4 @@ Caso vocẽ use o banco de dados já alimentado, já existem credenciais de aces
 |Usuário normal  |doxino2895@aqqor.com    | 00   |
 |Usuário normal  |melobos118@chainds.com  | 11   |
 |Usuário normal  |sohew17721@confmin.com  | 22   |
-
-## Rotas
-### Do Admin
-- O admin possui a visão de todos os animais, usuários e ongs cadastradas no dashboard dele, logo após logar
-- Ele pode cadastrar Ongs
-
-### Do Usuário
-- Cadastro na barra de navegação da home
-- Login na barra de navegação da home
-- Lista de pets na barra de navegação da home
-- Lista de Ongs na barra de navegação da home
-- Edição de perfil na página principal
-- A visão do histórico de adoção na página principal
-- Lista de chats iniciados na barra de navegação
-- Ao clicar em redefinir senha na página de login um email com um link para o recuperação é enviado para o email cadastrado no petmatch, como aqui todas as contas foram criadas usando email temporário pra testar essa funcionalidade tem que ser criada uma nova conta
-- Ao clicar em "pets para adoção" na barra de navegação, selecionar um animal e clicar em tenho interesse um chat vai ser iniciado com a ong que cadastrou o animal
-- Na aba de /petList tem filtros de exibição de animais
-
-### Do Usuário
-- Visão de todos os animais cadastrados após logar com a opção de editar ou excluir o pet
-- Na rota de edição ele tem a opção de reservar o animal ou adotar, ao clicar em mudar o status para adotado o campo de adotante vai mostrar uma lista de usuários que clicaram em "Tenho interesse" nesse pet
-- O pet que tem o status adotado não aparece mais na lista de pets que os usuários tem acesso, os reservados ainda aparecem
-- Opção de cadastro de animais na tela principal
-- Lista de chats iniciados na barra de navegação, os chats só são iniciado pelos usuários 
-
-### Chat simultâneo
-- Para poder usar o chat como se fosse o user e a ong conversando ao mesmo tempo tem que logar em uma conta usuário em perfil do chrome, e em outro perfil do chrome na conta tipo Ong correspondente no chat
-  - Ou só loga como user em um navegador e em outro navegador como a ong correspondente 
 
