@@ -1,7 +1,7 @@
 from datetime import datetime
 import random
 
-from flask_sqlalchemy import SQLAlchemy
+import flask_sqlalchemy
 from flask_login import LoginManager, login_user, UserMixin, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy import event
